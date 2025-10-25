@@ -26,7 +26,13 @@ await registerFaucetRoutes(app);
 await registerMatchmakingWs(app);
 await registerGameWs(app);
 
-const port = env.PORT;
-app.listen({ port, host: "0.0.0.0" }).catch((err) => {
-  app.log.error(err); process.exit(1);
-});
+// For Vercel serverless, export the app instead of listening
+export default app;
+
+// For local development, listen if not in Vercel
+if (!process.env.VERCEL) {
+  const port = env.PORT;
+  app.listen({ port, host: "0.0.0.0" }).catch((err) => {
+    app.log.error(err); process.exit(1);
+  });
+}
