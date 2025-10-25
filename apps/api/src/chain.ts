@@ -1,10 +1,10 @@
 import { createPublicClient, createWalletClient, http, parseAbi, type Address } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { env } from "./env.js";
-import ARK from "../../../packages/shared/abi/ARKToken.json" with { type: "json" };
-import XP from "../../../packages/shared/abi/XPRegistry.json" with { type: "json" };
-import BADGE from "../../../packages/shared/abi/BadgeNFT.json" with { type: "json" };
-import ESCROW from "../../../packages/shared/abi/GameEscrow.json" with { type: "json" };
+import ARK from "./abi/ARKToken.json" with { type: "json" };
+import XP from "./abi/XPRegistry.json" with { type: "json" };
+import BADGE from "./abi/BadgeNFT.json" with { type: "json" };
+import ESCROW from "./abi/GameEscrow.json" with { type: "json" };
 
 const chain = { id: env.BASE_CHAIN_ID, name: "base-sepolia", nativeCurrency:{name:"ETH",symbol:"ETH",decimals:18}, rpcUrls:{default:{ http:[env.BASE_RPC_URL] } } };
 

@@ -1,4 +1,5 @@
 node_modules
 .pnpm-store
 apps/web/node_modules
-packages/**
+packages/contracts/**
+!packages/shared/**

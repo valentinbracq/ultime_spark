@@ -2,10 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "baseUrl": ".",
     "declaration": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../packages/shared/abi/*.json"],
   "exclude": ["node_modules", "dist"]
 }
