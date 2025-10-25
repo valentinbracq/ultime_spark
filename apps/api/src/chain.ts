@@ -10,7 +10,7 @@ const chain = { id: env.BASE_CHAIN_ID, name: "base-sepolia", nativeCurrency:{nam
 
 export const publicClient = createPublicClient({ chain, transport: http() });
 export const walletClient = createWalletClient({
-  account: privateKeyToAccount(process.env.SERVER_PRIVATE_KEY as `0x${string}`),
+  account: privateKeyToAccount(env.SERVER_PRIVATE_KEY as `0x${string}`),
   chain,
   transport: http()
 });
