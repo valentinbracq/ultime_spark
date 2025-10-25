@@ -1,5 +1,17 @@
 {
-  "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @spark/api build",
-  "outputDirectory": "apps/api/dist",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile"
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.js"
+    }
+  ],
+  "buildCommand": "DATABASE_URL=postgresql://user:pass@localhost:5432/db pnpm build",
+  "installCommand": "pnpm install"
 }
